@@ -25,7 +25,7 @@ for i in range(2):
     if username is not None:
         count +=1
         user = f'PASSWORD_FOR_{count}'
+    with open('users.txt', 'a') as userfile:
+        userfile.write(user + '\n')
     with open('.env', 'a') as envfile:
         envfile.write(f"{user}='{password}'\n")
-
-
